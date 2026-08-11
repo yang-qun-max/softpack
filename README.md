@@ -47,6 +47,8 @@ With softpack:
 
 ```bash
 pip install softpack
+# or directly from GitHub:
+pip install git+https://github.com/yang-qun-max/softpack.git
 ```
 
 ```python
