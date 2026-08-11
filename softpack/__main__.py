@@ -32,6 +32,14 @@ def main():
         help="Target keep ratio in (0, 1] (default: 0.5)."
     )
 
+    # --- hook subcommand ---
+    hook = sub.add_parser("hook", help="Claude Code hook integration")
+    hook.add_argument(
+        "hook_cmd", nargs="?", default=None,
+        choices=["pre-compact", "post-compact", "install"],
+        help="Hook command: pre-compact | post-compact | install"
+    )
+
     # --- mcp subcommand ---
     mcp = sub.add_parser("mcp", help="Run as MCP server (for Claude Code)")
 
@@ -54,6 +62,13 @@ def main():
             print(f"Error: {e}", file=sys.stderr)
             sys.exit(1)
         print(result)
+
+    elif args.command == "hook":
+        from softpack.hooks import main as hook_main
+        sys.argv = [sys.argv[0]]
+        if args.hook_cmd:
+            sys.argv.append(args.hook_cmd)
+        hook_main()
 
     elif args.command == "mcp":
         from softpack.mcp_server import serve
