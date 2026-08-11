@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "softpack"
+version = "0.1.0"
+description = "Gentle pre-compression for AI context — press softly before LLM crushes it"
+readme = "README.md"
+license = "MIT"
+authors = [
+    {name = "Yang Qun"}
+]
+keywords = [
+    "ai", "agent", "context", "compression", "memory",
+    "llm", "chinese", "claude-code", "mcp", "token"
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Text Processing :: Filters",
+]
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+mcp = ["mcp>=1.0.0"]
+benchmark = ["numpy", "onnxruntime", "tokenizers"]
+
+[project.scripts]
+softpack = "softpack.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/yang-qun-max/softpack"
+Repository = "https://github.com/yang-qun-max/softpack"
+Issues = "https://github.com/yang-qun-max/softpack/issues"
+
+[tool.setuptools.packages.find]
+include = ["softpack*"]
