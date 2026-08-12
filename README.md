@@ -2,7 +2,7 @@
 
 [![Python](https://img.shields.io/badge/python-3.10+-blue.svg)](https://pypi.org/project/softpack/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Tests](https://img.shields.io/badge/tests-29%2F29%20passing-brightgreen.svg)](tests/)
+[![tests](https://github.com/yang-qun-max/softpack/actions/workflows/test.yml/badge.svg)](https://github.com/yang-qun-max/softpack/actions/workflows/test.yml)
 [![PyPI](https://img.shields.io/badge/pypi-soon-orange.svg)](https://pypi.org/project/softpack/)
 
 > **Gentle pre-compression for AI agent context.**
